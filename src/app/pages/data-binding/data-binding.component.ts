@@ -16,6 +16,7 @@ export class DataBindingComponent implements OnInit {
   bgBorder = 'none';
   imgWidth = 600;
   textInput = '';
+  twoText = false;
 
 
   constructor() { }
@@ -35,6 +36,11 @@ export class DataBindingComponent implements OnInit {
   clicar(){
     console.log('Clicado');
     this.textRed = true;
+  }
+
+  clicado(){
+    console.log('Mudou cor do text two way data binding')
+    this.twoText = true;
   }
 
 }

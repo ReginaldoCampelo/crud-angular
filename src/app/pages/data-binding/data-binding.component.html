@@ -7,11 +7,11 @@
 
 <div class="input-group input-group-lg mt-5 mb-5">
     <span class="input-group-text" id="inputGroup-sizing-lg">Nome</span>
-    <input [class.text-red]="textRed" #input (keyup.enter)="clicou(input.value)" type="text" class="form-control"
+    <input  #input (keyup.enter)="clicou(input.value)" type="text" class="form-control"
         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
 </div>
 <div>
-    <p class="text-capitalize fs-1 fw-bold">{{ input.value }}</p>
+    <p class="text-capitalize fs-1 fw-bold" [class.text-red]="textRed">{{ input.value }}</p>
 </div>
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -20,11 +20,14 @@
 
 <div class="d-grid">
     <!--<button (click)="clicar()" [attr.aria-label]="buttonText" class="btn btn-outline-danger btn-lg m-5" [style.backgroundColor]="bgColor" [style.color]="textColor" [style.border]="bgBorder">{{ buttonText }}</button>-->
-    <button (click)="clicar()" [attr.aria-label]="buttonText" class="btn btn-outline-danger btn-lg m-5">{{ buttonText
-        }}</button>
+    <button (click)="clicar()" [attr.aria-label]="buttonText" class="btn btn-outline-danger btn-lg m-5">{{ buttonText }}</button>
 </div>
 
 <!-- Two Way Data Binding -->
 <input type="text" placeholder="Two Way - Data Binding" class="form-control md-flex justify-content-md-end"
     [(ngModel)]="textInput">
-<p class="text-default">{{ textInput }}</p>
+<p class="text-default fs-4 fw-bold" [class.two-blue]="twoText">{{ textInput }}</p>
+
+<div class="d-grid">
+    <button (click)="clicado()" [attr.aria-label]="buttonText" class="btn btn-outline-primary btn-lg m-5">{{ buttonText }}</button>
+</div>
