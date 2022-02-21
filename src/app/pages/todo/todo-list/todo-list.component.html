@@ -1,1 +1,19 @@
-<p>todo-list works!</p>
+<section class="wrapper">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Lista de Tarefas</mat-card-title>
+            <mat-card-content>
+                <mat-form-field class="form-field">
+                    <mat-label>Tarefa</mat-label>
+                    <input type="text" #todo matInput placeholder="Insira sua tarefa"
+                        (keyup.enter)="addTodo(todo.value); todo.value=''">
+                </mat-form-field>
+                <mat-list role="list">
+                    <div *ngFor="let todo of todos;">
+                        <crud-todo-item [todo]="todo" (remove)="removeTodo($event)"></crud-todo-item>
+                    </div>
+                </mat-list>
+            </mat-card-content>
+        </mat-card-header>
+    </mat-card>
+</section>
