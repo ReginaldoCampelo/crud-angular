@@ -1,1 +1,79 @@
-<p>pipes-examples works!</p>
+<div class="form-group mt-5">
+    <label class="fs-5 fw-bold mt-2" for="number">Number:</label>
+    <input type="number" [(ngModel)]="number" class="form-control" id="number">
+    <div class="container d-flex justify-content-center fs-1 fw-bold mt-2">
+
+        <div class="container">
+            <p class="fs-5">Sem formatação</p>
+            <p>{{ number }}</p>
+
+            <button class="btn btn-outline-danger" (click)="mudarValor()">Mudar Valor</button>
+
+            <hr>
+
+            <p class="fs-5">Com formatação</p>
+            <p>{{ number | number:'2.1-1' }}</p>
+
+            <hr>
+
+            <p class="fs-5">Resultado em moeda</p>
+            <p>{{ number | currency:'BRL' }}</p>
+
+            <hr>
+
+            <p class="fs-5">Resultado em porcentagem</p>
+            <p>{{ number | percent}}</p>
+
+            <hr>
+
+            <p class="fs-5">Data sem formatação</p>
+            <p>{{ date }}</p>
+
+            <hr>
+
+            <p class="fs-5">Data formatada</p>
+            <p>{{ date | date:'dd/MM/yyyy':'GMT' }}</p>
+
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="fs-5 fw-bold mt-2" for="text">Text:</label>
+    <input type="text" [(ngModel)]="text" class="form-control" id="text">
+    <div class="container d-flex justify-content-center fs-1 fw-bold mt-2">
+        <div class="container">
+
+            <p class="fs-5">Sem formatação</p>
+            <p>{{ text }}</p>
+            <button class="btn btn-outline-dark" (click)="mudarText()">Mudar Texto</button>
+
+            <hr>
+
+            <p class="fs-5">Slice</p>
+            <p>{{ text | slice:4:10 | lowercase}}</p>
+
+            <hr>
+
+            <p class="fs-5">Capitalize</p>
+            <p>{{ text | titlecase }}</p>
+
+            <hr>
+
+            <p class="fs-5">Lowercase</p>
+            <p>{{ text | lowercase }}</p>
+
+            <hr>
+
+            <p class="fs-5">Uppercase</p>
+            <p>{{ text | uppercase }}</p>
+            <hr>
+            <p class="fs-5">Json</p>
+            <p class="fs-4">{{ pessoa | json }}</p>
+            <button class="btn btn-primary" (click)="mudarJson()">Mudar Pessoa</button>
+
+            <hr>
+        </div>
+    </div>
+</div>
