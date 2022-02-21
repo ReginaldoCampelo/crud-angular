@@ -10,6 +10,7 @@ import { UserFormComponent } from './pages/users/user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataBindingComponent } from './pages/data-binding/data-binding.component';
 import { PipesExamplesComponent } from './pages/pipes-examples/pipes-examples.component';
+import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PipesExamplesComponent } from './pages/pipes-examples/pipes-examples.co
     UsersListComponent,
     UserFormComponent,
     DataBindingComponent,
-    PipesExamplesComponent
+    PipesExamplesComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
